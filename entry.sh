@@ -10,4 +10,4 @@ mkdir -p "/images"
 
 trap "pkill -SIGINT -f umbreld; while pgrep umbreld >/dev/null; do sleep 1; done" SIGINT SIGTERM
 
-umbreld --data-directory /data & wait $!
+umbreld --data-directory /data
