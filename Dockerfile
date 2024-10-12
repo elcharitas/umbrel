@@ -80,7 +80,6 @@ RUN set -eu \
 COPY --chmod=755 ./entry.sh /run/
 COPY --from=be-build --chmod=755 /tmp/umbreld/build/umbreld /usr/local/bin/umbreld
 
-VOLUME /data
-EXPOSE 80 443
+EXPOSE ${PORT}
 
 ENTRYPOINT ["/usr/bin/tini", "-s", "/run/entry.sh"]
